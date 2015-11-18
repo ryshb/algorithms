@@ -40,7 +40,6 @@ public class InsertionSort extends AbstractSort {
 				j--;
 			}
 			original[j] = valueToSort;
-			System.out.println("Completed " + i);
 		}
 		return original;
 	}

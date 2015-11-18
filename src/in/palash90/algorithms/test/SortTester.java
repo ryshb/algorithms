@@ -35,7 +35,7 @@ public class SortTester {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int length = 999999;
+		int length = 50000;
 		int[] original = new int[length];
 
 		for (int i = 0; i < length; i++) {

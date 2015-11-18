@@ -1,0 +1,3 @@
+# algorithms
+Working with Algorithms and writing the code...
+While studying different algorithms, I came up writing all these codes. Thought of sharing the code base with you, if this helps you.

@@ -14,29 +14,24 @@
  * limitations under the License.
  */
 
-package in.palash90.algorithms.sort;
+package in.palash90.algorithms.test;
+
+import in.palash90.algorithms.utils.MathUtils;
 
 /**
- * Basic Sorting contract for different sort implementations.
+ * test the logics written in Math Utils.
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
- * @since Nov 18, 2015
+ * @since Nov 19, 2015
  */
-public interface ISort {
-	/**
-	 * utility method to print any integer array.
-	 * 
-	 * @param arr
-	 */
-	public void printArray(int[] arr);
+public class MathUtilTester {
 
 	/**
-	 * Sorts the input array and returns the sorted array.
-	 * 
-	 * @param original
-	 * @return
+	 * @param args
 	 */
-	public void sort(int original[]);
+	public static void main(String[] args) {
+		System.out.println(MathUtils.factorial(23));
+	}
 
 }

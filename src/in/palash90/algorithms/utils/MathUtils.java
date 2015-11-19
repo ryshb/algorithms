@@ -14,29 +14,27 @@
  * limitations under the License.
  */
 
-package in.palash90.algorithms.sort;
+package in.palash90.algorithms.utils;
 
 /**
- * Basic Sorting contract for different sort implementations.
+ * Class for different small mathematical implementations.
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
- * @since Nov 18, 2015
+ * @since Nov 19, 2015
  */
-public interface ISort {
+public class MathUtils {
 	/**
-	 * utility method to print any integer array.
+	 * Calculate the factorial of any given number.
 	 * 
-	 * @param arr
-	 */
-	public void printArray(int[] arr);
-
-	/**
-	 * Sorts the input array and returns the sorted array.
-	 * 
-	 * @param original
+	 * @param n
 	 * @return
 	 */
-	public void sort(int original[]);
-
+	public static long factorial(int n) {
+		long result = 1;
+		for (int i = 1; i <= n; i++) {
+			result *= i;
+		}
+		return result;
+	}
 }

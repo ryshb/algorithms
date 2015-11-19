@@ -18,6 +18,7 @@ package in.palash90.algorithms.sort;
 
 /**
  * Insertion sort implementation.
+ * Details can be found here.
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
@@ -31,7 +32,7 @@ public class InsertionSort extends AbstractSort {
 	 * @see in.palash90.algorithms.sort.ISort#sort(int[])
 	 */
 	@Override
-	public int[] sort(int[] original) {
+	public void sort(int[] original) {
 		for (int i = 1; i < original.length; i++) {
 			int valueToSort = original[i];
 			int j = i;
@@ -41,7 +42,6 @@ public class InsertionSort extends AbstractSort {
 			}
 			original[j] = valueToSort;
 		}
-		return original;
 	}
 
 }

@@ -17,26 +17,34 @@
 package in.palash90.algorithms.sort;
 
 /**
- * Basic Sorting contract for different sort implementations.
+ * The Gnome Sort implementation. Details can be found in
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
- * @since Nov 18, 2015
+ * @since Nov 19, 2015
  */
-public interface ISort {
-	/**
-	 * utility method to print any integer array.
-	 * 
-	 * @param arr
-	 */
-	public void printArray(int[] arr);
+public class GnomeSort extends AbstractSort {
 
-	/**
-	 * Sorts the input array and returns the sorted array.
+	/*
+	 * (non-Javadoc)
 	 * 
-	 * @param original
-	 * @return
+	 * @see in.palash90.algorithms.sort.ISort#sort(int[])
 	 */
-	public void sort(int original[]);
-
+	@Override
+	public void sort(int[] original) {
+		int length = original.length;
+		int i = 0;
+		while (i < length) {
+			if (i == 0 || original[i] >= original[i - 1]) {
+				i++;
+			} else {
+				int temp = original[i];
+				original[i] = original[i - 1];
+				original[i - 1] = temp;
+				if (i > 1) {
+					i--;
+				}
+			}
+		}
+	}
 }

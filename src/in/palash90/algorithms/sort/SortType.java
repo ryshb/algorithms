@@ -17,26 +17,12 @@
 package in.palash90.algorithms.sort;
 
 /**
- * Basic Sorting contract for different sort implementations.
+ * enum to hold all possible sort implementations.
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
- * @since Nov 18, 2015
+ * @since Nov 19, 2015
  */
-public interface ISort {
-	/**
-	 * utility method to print any integer array.
-	 * 
-	 * @param arr
-	 */
-	public void printArray(int[] arr);
-
-	/**
-	 * Sorts the input array and returns the sorted array.
-	 * 
-	 * @param original
-	 * @return
-	 */
-	public void sort(int original[]);
-
+public enum SortType {
+	BOGO, INSERTION, MERGE, GNOME
 }

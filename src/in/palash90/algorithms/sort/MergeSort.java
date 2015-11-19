@@ -16,10 +16,9 @@
 
 package in.palash90.algorithms.sort;
 
-import java.util.Arrays;
-
 /**
  * Implementation of well sorting algorithm, Merge Sort.
+ * Details can be found here
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
@@ -36,11 +35,11 @@ public class MergeSort extends AbstractSort {
 	 * @see in.palash90.algorithms.sort.ISort#sort(int[])
 	 */
 	@Override
-	public int[] sort(int[] original) {
-		this.array = Arrays.copyOf(original, original.length);
+	public void sort(int[] original) {
+		this.array = original;
 		this.length = original.length;
 		this.tempMergArr = new int[length];
-		return mergeSort(0, length - 1);
+		mergeSort(0, length - 1);
 	}
 
 	/**
@@ -50,14 +49,13 @@ public class MergeSort extends AbstractSort {
 	 * @param higherIndex
 	 * @return
 	 */
-	private int[] mergeSort(int lowerIndex, int higherIndex) {
+	private void mergeSort(int lowerIndex, int higherIndex) {
 		if (lowerIndex < higherIndex) {
 			int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
 			mergeSort(lowerIndex, middle);
 			mergeSort(middle + 1, higherIndex);
 			mergeParts(lowerIndex, middle, higherIndex);
 		}
-		return array;
 	}
 
 	/**

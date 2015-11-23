@@ -17,8 +17,8 @@
 package in.palash90.algorithms.sort;
 
 /**
- * Implementation of well sorting algorithm, Merge Sort.
- * Details can be found here
+ * Implementation of well sorting algorithm, Merge Sort. Details can be found
+ * here
  * 
  * @author Palash Kanti Kundu
  * @version 1.0
@@ -40,6 +40,9 @@ public class MergeSort extends AbstractSort {
 		this.length = original.length;
 		this.tempMergArr = new int[length];
 		mergeSort(0, length - 1);
+		// Release the memory used for swapping elements as soon as the sorting
+		// gets completed.
+		this.tempMergArr = null;
 	}
 
 	/**

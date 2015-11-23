@@ -16,6 +16,8 @@
 
 package in.palash90.algorithms.utils;
 
+import java.util.Random;
+
 /**
  * Utility class for different array related functionalities.
  * 
@@ -32,8 +34,10 @@ public class ArrayUtils {
 	 */
 	public static int[] constructRandomArray(int length) {
 		int[] numberArray = new int[length];
+		Random random = new Random();
 		for (int i = 0; i < length; i++) {
-			numberArray[i] = (int) (length * Math.random());
+			numberArray[i] = (int) (random.nextInt() * Math.pow(-1,
+					random.nextInt()));
 		}
 		return numberArray;
 	}
@@ -53,7 +57,7 @@ public class ArrayUtils {
 	}
 
 	/**
-	 * Utility method to fill out the array with ascending numbers.
+	 * Utility method to fill out the array with descending numbers.
 	 * 
 	 * @param length
 	 * @param insertionOriginal

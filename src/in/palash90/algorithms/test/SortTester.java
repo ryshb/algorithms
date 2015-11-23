@@ -39,15 +39,15 @@ public class SortTester {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int length = 10000;
-		int[] original = ArrayUtils.constructDescendingArray(length);
+		int length = 50;
+		int[] original = ArrayUtils.constructRandomArray(length);
 
 		/*
 		 * Perform the test for each known algorithm.
 		 */
 		performTest(SortType.MERGE, original);
-		performTest(SortType.INSERTION, original);
-		performTest(SortType.GNOME, original);
+		// performTest(SortType.INSERTION, original);
+		// performTest(SortType.GNOME, original);
 		// performTest(SortType.BOGO, original);
 	}
 

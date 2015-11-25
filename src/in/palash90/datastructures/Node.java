@@ -16,6 +16,7 @@
 
 package in.palash90.datastructures;
 
+
 /**
  * Basic unit of Linked Data Structures.
  * 

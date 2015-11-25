@@ -37,4 +37,17 @@ public abstract class AbstractSort implements ISort {
 		}
 		System.out.println("]");
 	}
+
+	/**
+	 * Generic implementation for swapping elements in an array.
+	 * 
+	 * @param original
+	 * @param i
+	 * @param j
+	 */
+	protected void swap(int[] original, int i, int j) {
+		int temp = original[j];
+		original[j] = original[i];
+		original[i] = temp;
+	}
 }

@@ -24,5 +24,5 @@ package in.palash90.algorithms.sort;
  * @since Nov 19, 2015
  */
 public enum SortType {
-	BOGO, INSERTION, MERGE, GNOME
+	BOGO, INSERTION, MERGE, GNOME, SELECTION
 }

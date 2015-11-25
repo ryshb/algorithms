@@ -39,6 +39,9 @@ public class SortFactory {
 		case GNOME:
 			sort = new GnomeSort();
 			break;
+		case SELECTION:
+			sort = new SelectionSort();
+			break;
 		}
 		return sort;
 	}

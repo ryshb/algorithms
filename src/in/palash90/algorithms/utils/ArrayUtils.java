@@ -36,7 +36,7 @@ public class ArrayUtils {
 		int[] numberArray = new int[length];
 		Random random = new Random();
 		for (int i = 0; i < length; i++) {
-			numberArray[i] = (int) (random.nextInt() * Math.pow(-1,
+			numberArray[i] = (int) (random.nextInt(length) * Math.pow(-1,
 					random.nextInt()));
 		}
 		return numberArray;
@@ -68,5 +68,32 @@ public class ArrayUtils {
 			numberArray[i] = length - i;
 		}
 		return numberArray;
+	}
+
+	/**
+	 * Utility method to fill out the array with duplicate numbers.
+	 * 
+	 * @param length
+	 * @param insertionOriginal
+	 */
+	public static int[] constructDuplicateArray(int length) {
+		int[] numberArray = new int[length];
+		for (int i = 0; i < length / 2; i++) {
+			numberArray[i] = length - i;
+			numberArray[length - i - 1] = length - i;
+		}
+		shuffleArray(numberArray);
+		return numberArray;
+	}
+
+	static void shuffleArray(int[] ar) {
+		Random rnd = new Random();
+		for (int i = ar.length - 1; i > 0; i--) {
+			int index = rnd.nextInt(i + 1);
+			// Simple swap
+			int a = ar[index];
+			ar[index] = ar[i];
+			ar[i] = a;
+		}
 	}
 }

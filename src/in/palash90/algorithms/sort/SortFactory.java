@@ -42,6 +42,9 @@ public class SortFactory {
 		case SELECTION:
 			sort = new SelectionSort();
 			break;
+		case QUICK:
+			sort = new QuickSort();
+			break;
 		}
 		return sort;
 	}

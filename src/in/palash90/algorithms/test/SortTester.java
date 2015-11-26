@@ -35,21 +35,46 @@ import java.util.Date;
 @Deprecated
 public class SortTester {
 
+	enum DataSet {
+		ASCENDING, DESCENDING, DUPLICATES, RANDOM
+	}
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int length = 15;
-		int[] original = ArrayUtils.constructDescendingArray(length);
+		int length = 5000;
+		int[] ascending = ArrayUtils.constructAscendingArray(length);
+		int[] descending = ArrayUtils.constructDescendingArray(length);
+		int[] duplicates = ArrayUtils.constructDuplicateArray(length);
+		int[] random = ArrayUtils.constructRandomArray(length);
 
-		/*
-		 * Perform the test for each known algorithm.
-		 */
-		performTest(SortType.MERGE, original);
-		performTest(SortType.SELECTION, original);
-		// performTest(SortType.INSERTION, original);
-		// performTest(SortType.GNOME, original);
-		// performTest(SortType.BOGO, original);
+		performForAll(ascending, descending, duplicates, random);
+	}
+
+	/**
+	 * Wth the same data set, run for every algorithm.
+	 * 
+	 * @param ascending
+	 * @param descending
+	 * @param duplicates
+	 * @param random
+	 */
+	private static void performForAll(int[] ascending, int[] descending,
+			int[] duplicates, int[] random) {
+		for (SortType t : SortType.values()) {
+			System.out.println("**************** " + t
+					+ " Sort ****************");
+			if (t != SortType.BOGO) {
+				performTest(t, ascending, DataSet.ASCENDING);
+				performTest(t, descending, DataSet.DESCENDING);
+				performTest(t, duplicates, DataSet.DUPLICATES);
+				performTest(t, random, DataSet.RANDOM);
+			}
+			System.out.println("**************** End of " + t
+					+ " Sort ****************");
+			System.out.println();
+		}
 	}
 
 	/**
@@ -58,7 +83,7 @@ public class SortTester {
 	 * @param length
 	 * @param sdf
 	 */
-	private static void performTest(SortType t, int[] original) {
+	private static void performTest(SortType t, int[] original, DataSet type) {
 		// Maintain the original copy. As it may be used for another test.
 		int[] copy = Arrays.copyOf(original, original.length);
 
@@ -66,8 +91,6 @@ public class SortTester {
 		Date d1 = new Date();
 
 		ISort sort = SortFactory.createSort(t);
-		System.out.println("Before sort:");
-
 		sort.printArray(copy);
 
 		System.out.println(t + " sort Started at: " + sdf.format(d1));
@@ -75,7 +98,8 @@ public class SortTester {
 
 		Date d2 = new Date();
 
-		System.out.println(t + " sort Completed at: " + sdf.format(d2));
+		System.out.println(t + " sort with " + type + " Completed at: "
+				+ sdf.format(d2));
 
 		System.out
 				.printf("Time taken to sort %d element using %s Sort: %d miliseconds\n",

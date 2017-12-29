@@ -24,10 +24,7 @@ package in.palash90.algorithms.sort;
  * @version 1.0
  * @since Nov 18, 2015
  */
-public class MergeSort extends AbstractSort {
-	private int[] array;
-	private int[] tempMergArr;
-	private int length;
+p
 
 	/*
 	 * (non-Javadoc)
